@@ -1,0 +1,5 @@
+---
+Checks: '*,-fuchsia-*,-google-*,-zircon-*,-abseil-*,-modernize-*, readability-*,-llvm-*,-llvmlibc-*'
+WarningsAsErrors: '*'
+HeaderFilterRegex: ''
+FormatStyle: none
