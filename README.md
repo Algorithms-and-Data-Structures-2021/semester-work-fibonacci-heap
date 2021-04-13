@@ -1,10 +1,6 @@
-# Название семестровой работы
+# Fibonacci heap
 
-[![CMake](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-template/actions/workflows/cmake.yml/badge.svg)](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-template/actions/workflows/cmake.yml)
-
-**_Измените status badge сверху для отображения статуса сборки вашего проекта._**
-
-`Actions > CMake > ... > Create status badge`
+[![CMake](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-fibonacci-heap/actions/workflows/cmake.yml/badge.svg)](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-fibonacci-heap/actions/workflows/cmake.yml)
 
 _Краткое описание семестрового проекта. Следует отразить информацию по следующим пунктам:_
 
@@ -15,17 +11,12 @@ _Краткое описание семестрового проекта. Сле
 - _Какова теоретическая сложность операций (поиск за `O(log(n))`, вставка за `O(n^2)` и т.д.)?_
 - _Какая-то другая справочная информация о проекте._
 
-## Команда "название команды"
+## Команда "Fibonacci team"
 
-_Заполните таблицу с указанием вклада каждого из участников в проект._
-
-**Примечание**. Преподаватель может определить вклад любого из участников команды по истории коммитов.
-
-| Фамилия Имя   | Вклад (%) | Прозвище              |
-| :---          |   ---:    |  ---:                 |
-| Участник №1   | 50        |  _босс_               |
-| Участник №2   | 40        |  _потрошитель памяти_ |
-| Участник №3   | 10        |  _самозванец_         |
+| Фамилия Имя          | Вклад (%) | Прозвище              |
+| :---                 |   ---:    |  ---:                 |
+| Ибаев Даниль         | 50        |  _    _               |
+| Анастасия Войтенко   | 50        |  _                  _ |
 
 **Девиз команды**
 > _Наши цели ясны. Задачи определены. За работу, товарищи!_
