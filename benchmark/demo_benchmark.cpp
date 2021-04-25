@@ -17,10 +17,8 @@ static constexpr auto kProjectPath = string_view{PROJECT_SOURCE_DIR};
 
 int main(int argc, char **argv) {
 
-  // Tip 1: входные аргументы позволяют более гибко контролировать параметры вашей программы
-
-  // Можете передать путь до входного/выходного файла в качестве аргумента,
-  // т.е. не обязательно использовать kDatasetPath и прочие константы
+  // Tip 1: входные аргументы позволяют более гибко контролировать работу вашей программы.
+  // Можете передать путь до входного/выходного тестового файла в качестве аргумента программы.
 
   for (int index = 0; index < argc; index++) {
     cout << "Arg: " << argv[index] << '\n';
@@ -51,15 +49,15 @@ int main(int argc, char **argv) {
   // Tip 3: время работы программы (или участка кода) можно осуществить
   // как изнутри программы (std::chrono), так и сторонними утилитами
 
-  const auto time_point_before = chrono::high_resolution_clock::now();
+  const auto time_point_before = chrono::steady_clock::now();
 
   // здесь находится участок кода, время которого необходимо замерить
 
-  const auto time_point_after = chrono::high_resolution_clock::now();
+  const auto time_point_after = chrono::steady_clock::now();
 
   // переводим время в наносекунды
   const auto time_diff = time_point_after - time_point_before;
-  const long time_elapsed_ns = chrono::duration_cast<chrono::nanoseconds>(time_diff).count();
+  const auto time_elapsed_ns = chrono::duration_cast<chrono::nanoseconds>(time_diff).count();
 
   cout << "Time elapsed (ns): " << time_elapsed_ns << '\n';
 
