@@ -68,7 +68,6 @@ int main() {
         const auto time_elapsed_ns_search = chrono::duration_cast<chrono::nanoseconds>(time_diff_search).count();
         cout << time_elapsed_ns_search << endl;
 
-        //tree.Clear();
         input_file.close();
 
         // Открываем файл для записи и вносим полученые данные

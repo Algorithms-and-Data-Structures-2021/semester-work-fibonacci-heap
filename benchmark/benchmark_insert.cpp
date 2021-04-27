@@ -52,7 +52,6 @@ int main() {
         const auto time_elapsed_ns_insert = chrono::duration_cast<chrono::nanoseconds>(time_diff_insert).count();
         cout << time_elapsed_ns_insert << endl;
 
-       // tree.Clear();
         input_file.close();
 
         // Открываем файл для записи и вносим полученые данные
@@ -64,3 +63,4 @@ int main() {
   }
   return 0;
 }
+//
