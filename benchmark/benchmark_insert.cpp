@@ -26,7 +26,6 @@ int main() {
   vector <string> folders = {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10"};
   vector <string> files = {"100", "500", "1000", "5000", "10000", "50000", "100000", "500000", "1000000", "5000000"};
   itis::FibonacciHeap heap;
-
   for (string file : files) { // Проходим по всем 10 .csv файлам
     for (string folder : folders) { // Проходим по всем 10 папкам с файлами
       for (int i = 1; i < 11; i++) { // Запускаем замерку времени 10 раз
@@ -34,11 +33,11 @@ int main() {
         auto input_file = ifstream(path + "/" + "insert/" + folder + "/" + file + ".csv");
         auto time_diff_insert = chrono::nanoseconds::zero();
         cout << (path + "/" + "insert/" + folder + "/" + file) << endl;
-
         // здесь находится участок кода, время которого необходимо замерить
         if (input_file) {
           while (line != "") {
             getline(input_file, line);
+
             if (line == "") {
               break;
             }
@@ -63,4 +62,3 @@ int main() {
   }
   return 0;
 }
-//
