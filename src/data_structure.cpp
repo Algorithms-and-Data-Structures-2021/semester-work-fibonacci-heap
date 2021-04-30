@@ -5,7 +5,7 @@ namespace itis {
   
   
   node* FibonacciHeap::insert(int value) {
-    node* result = _singleton(value);  // Создаем узел
+    node* result = _create_node(value);  // Создаем узел
     heap = _merge(heap, result);       // Мерджи его в кучу
     return result;
   }
@@ -81,7 +81,7 @@ namespace itis {
   }
   
   
-  node* FibonacciHeap::_singleton(int value) {  // create Node with value
+  node* FibonacciHeap::_create_node(int value){  // create Node with value
     node* n = new node;
     n->value = value;
     n->prev = n->next = n;
