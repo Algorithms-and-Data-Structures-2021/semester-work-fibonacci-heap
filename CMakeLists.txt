@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
 
 # Определите название вашего проекта (должно совпадать с названием репозитория).
 # Примечание: замените символ '-' на '_'.
-project(semester-work-fibonacci-heap CXX)
+project(semester-work-template CXX)
 
 # === Определение стандарта C++ для всего проекта ===
 
@@ -34,8 +34,8 @@ target_compile_definitions(project_paths INTERFACE
 # Это самое главное, что вы должны реализовать в рамках семестрового проекта.
 
 add_library(${PROJECT_NAME} STATIC
-        src/Fibonacci_heap.cpp
-        include/Fibonacci_heap.hpp)
+        src/data_structure.cpp
+        include/data_structure.hpp)
 
 # включить предупреждения компилятора для библиотеки (линковка)
 target_link_libraries(${PROJECT_NAME} PRIVATE project_warnings)
