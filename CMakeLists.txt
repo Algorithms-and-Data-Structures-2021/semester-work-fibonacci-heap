@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
 
 # Определите название вашего проекта (должно совпадать с названием репозитория).
 # Примечание: замените символ '-' на '_'.
-project(semester_work_fibonacci_heap CXX)
+project(semester-work-fibonacci-heap CXX)
 
 # === Определение стандарта C++ для всего проекта ===
 
