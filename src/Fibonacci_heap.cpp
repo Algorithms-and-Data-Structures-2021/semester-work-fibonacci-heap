@@ -1,26 +1,37 @@
-#include "data_structure.hpp"
+#include "Fibonacci_heap.hpp"
 
 // файл с определениями
 namespace itis {
-  // здесь должны быть определения методов вашей структуры
+  
+  
   node* FibonacciHeap::insert(int value) {
     node* result = _singleton(value);  // Создаем узел
     heap = _merge(heap, result);       // Мерджи его в кучу
     return result;
   }
+  
+  
   bool FibonacciHeap::isEmpty() {
     return heap == nullptr;
   }
+  
+
   void FibonacciHeap::merge(FibonacciHeap& other) {
     heap = _merge(heap, other.heap);
     other.heap = _empty();
   }
+  
+  
   void FibonacciHeap::decreaseKey(node* n, int value) {
     heap = _decreaseKey(heap,n,value);
   }
+  
+  
   int FibonacciHeap::getMinimum() {
     return heap->value;
   }
+  
+  
   int FibonacciHeap::removeMinimum() {
     node* old = heap;
     heap = _removeMinimum(heap);
@@ -28,6 +39,8 @@ namespace itis {
     delete old;
     return result;
   }
+  
+  
   node* FibonacciHeap::_merge(node* a, node* b) {
     if (a == nullptr) {
       return b;
@@ -48,9 +61,13 @@ namespace itis {
     bPrev->next = aNext;
     return a;
   }
+  
+  
   node* FibonacciHeap::_empty() {
     return nullptr;
   }
+  
+  
   void FibonacciHeap::_deleteAll(node* n) {  //Ругается на рекурсию
     if (n != nullptr) {
       node* current = n;
@@ -62,6 +79,8 @@ namespace itis {
       } while (current != n);
     }
   }
+  
+  
   node* FibonacciHeap::_singleton(int value) {  // create Node with value
     node* n = new node;
     n->value = value;
@@ -72,6 +91,8 @@ namespace itis {
     n->parent = nullptr;
     return n;
   }
+  
+  
   node* FibonacciHeap::_removeMinimum(node* n) {
     _unMarkAndUnParentAll(n->child);
     if (n->next == n) {
@@ -125,6 +146,8 @@ namespace itis {
     } while (n != start);
     return min;
   }
+  
+  
   void FibonacciHeap::_unMarkAndUnParentAll(node* n) {
     if (n == nullptr)
       return;
@@ -135,12 +158,16 @@ namespace itis {
       current = current->next;
     } while (current != n);
   }
+  
+ 
   void FibonacciHeap::_addChild(node* parent, node* child) {
     child->prev = child->next = child;  //??
     child->parent = parent;
     parent->degree++;
     parent->child = _merge(parent->child, child);
   }
+  
+  
   node * FibonacciHeap::_decreaseKey(node* heap, node* n, int value) {
     if (n ->value < value) return heap;
     n ->value = value;
@@ -162,6 +189,8 @@ namespace itis {
     }
     return heap;
   }
+  
+  
   node * FibonacciHeap::_cut(node* heap, node* n) {
     if (n->next == n) {
       n->parent->child = nullptr;
@@ -174,6 +203,8 @@ namespace itis {
     n->marked = false;
     return _merge(heap, n);
   }
+  
+  
   void FibonacciHeap::output() {
     printf("FibHeap {\n");
     if(heap==NULL) {
@@ -188,6 +219,8 @@ namespace itis {
     } while(c!=heap);
     printf("}\n");
   }
+  
+  
   void FibonacciHeap::_outputChildren(node* n) {
     printf("\"%p\" [value=%d];\n",n,n->value);
     if(n->child) {
