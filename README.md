@@ -2,7 +2,7 @@
 
 [![CMake](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-fibonacci-heap/actions/workflows/cmake.yml/badge.svg)](https://github.com/Algorithms-and-Data-Structures-2021/semester-work-fibonacci-heap/actions/workflows/cmake.yml)
 
-_Краткое описание семестрового проекта:_
+_Краткое описание семестрового проекта :_
 
 
 - _Фибоначчиева куча (англ. Fibonacci heap) — структура данных, отвечающая интерфейсу priority queue.
